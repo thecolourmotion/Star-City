@@ -84,34 +84,42 @@ export function Reviews() {
         </motion.div>
       </div>
 
-      {/* Mobile: Button navigation */}
-      <div className="relative mt-12 flex md:hidden items-center justify-center gap-4">
-        <button
-          onClick={handlePrev}
-          className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
-          aria-label="Previous review"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <div className="w-full overflow-hidden">
+      {/* Mobile: Centered review with bottom navigation */}
+      <div className="relative mt-12 flex md:hidden flex-col items-center justify-center gap-6">
+        <div className="w-[90%] max-w-sm overflow-hidden">
           <motion.div
-            className="flex gap-5"
             initial={false}
-            animate={{ x: -mobileIndex * 320 }}
+            animate={{ x: -mobileIndex * 100 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="flex"
           >
             {reviews.map((r, i) => (
-              <ReviewCard key={i} {...r} />
+              <div key={i} className="w-[100%] shrink-0">
+                <div className="rounded-2xl border border-border bg-card p-6">
+                  <Stars rating={r.rating} />
+                  <p className="mt-4 text-sm leading-relaxed text-foreground/90">{r.text}</p>
+                  <p className="mt-4 text-sm font-semibold" style={{ color: "#d7cc32" }}>{r.name}</p>
+                </div>
+              </div>
             ))}
           </motion.div>
         </div>
-        <button
-          onClick={handleNext}
-          className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
-          aria-label="Next review"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            onClick={handlePrev}
+            className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
+            aria-label="Previous review"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
+            aria-label="Next review"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
       </div>
     </section>
   )

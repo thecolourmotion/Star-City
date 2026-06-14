@@ -85,8 +85,8 @@ export function Reviews() {
       </div>
 
       {/* Mobile: Centered review with bottom navigation */}
-      <div className="relative mt-12 flex md:hidden flex-col items-center justify-center gap-6">
-        <div className="w-[90%] max-w-sm overflow-hidden">
+      <div className="relative mt-12 flex md:hidden flex-col items-center justify-center gap-6 px-4">
+        <div className="w-full max-w-xs overflow-hidden">
           <motion.div
             initial={false}
             animate={{ x: -mobileIndex * 100 }}
@@ -94,7 +94,7 @@ export function Reviews() {
             className="flex"
           >
             {reviews.map((r, i) => (
-              <div key={i} className="w-[100%] shrink-0">
+              <div key={i} className="w-full shrink-0">
                 <div className="rounded-2xl border border-border bg-card p-6">
                   <Stars rating={r.rating} />
                   <p className="mt-4 text-sm leading-relaxed text-foreground/90">{r.text}</p>
@@ -104,18 +104,31 @@ export function Reviews() {
             ))}
           </motion.div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-center gap-4">
           <button
             onClick={handlePrev}
-            className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
-            aria-label="Previous review"
+            disabled={mobileIndex === 0}
+            className={`rounded-full border p-2 transition-all ${
+              mobileIndex === 0
+                ? "border-border/50 bg-card/50 opacity-50 cursor-not-allowed"
+                : "border-border bg-card hover:bg-primary/10"
+            }`}
+            aria-label="Previous Review"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
+          <span className="text-sm text-muted-foreground">
+            {mobileIndex + 1} / {reviews.length}
+          </span>
           <button
             onClick={handleNext}
-            className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
-            aria-label="Next review"
+            disabled={mobileIndex === reviews.length - 1}
+            className={`rounded-full border p-2 transition-all ${
+              mobileIndex === reviews.length - 1
+                ? "border-border/50 bg-card/50 opacity-50 cursor-not-allowed"
+                : "border-border bg-card hover:bg-primary/10"
+            }`}
+            aria-label="Next Review"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

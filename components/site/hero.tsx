@@ -56,7 +56,7 @@ export function Hero() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ borderColor: "#000000", color: "#000000", backgroundColor: "#000000" }}
+              style={{ borderColor: "#d7cc32", color: "#d7cc32", backgroundColor: "#000000" }}
               className="w-full rounded-full border px-8 py-3.5 text-sm font-semibold transition-all hover:bg-[#d7cc32] hover:text-black sm:w-auto"
             >
               Book a Visit

@@ -31,13 +31,13 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center"
         >
-          <h1 className="heading-font text-5xl leading-[0.95] text-foreground sm:text-7xl md:text-8xl">
+          <h1 className="heading-font text-5xl leading-[0.95] text-foreground sm:text-7xl md:text-8xl" style={{ fontWeight: 600 }}>
             WELCOME
             <br />
             TO <span style={{ color: "#d7cc32" }}>STAR CITY</span>
           </h1>
-          <p className="heading-font mt-4 text-lg tracking-widest text-foreground/90 sm:text-xl">
-            The Place To Be
+          <p className="heading-font mt-4 text-lg tracking-widest sm:text-xl" style={{ color: "#d7cc32" }}>
+            The place to be
           </p>
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             Experience exciting games, delicious food, a relaxing lounge, and unforgettable moments
@@ -56,7 +56,7 @@ export function Hero() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ borderColor: "#d7cc32", color: "#d7cc32" }}
+              style={{ borderColor: "#000000", color: "#000000", backgroundColor: "#000000" }}
               className="w-full rounded-full border px-8 py-3.5 text-sm font-semibold transition-all hover:bg-[#d7cc32] hover:text-black sm:w-auto"
             >
               Book a Visit

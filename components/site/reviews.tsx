@@ -33,7 +33,7 @@ function ReviewCard({ name, text, rating }: { name: string; text: string; rating
     <div className="w-80 shrink-0 rounded-2xl border border-border bg-card p-6">
       <Stars rating={rating} />
       <p className="mt-4 text-sm leading-relaxed text-foreground/90">{text}</p>
-      <p className="mt-4 text-sm font-semibold text-primary">{name}</p>
+      <p className="mt-4 text-sm font-semibold" style={{ color: "#d7cc32" }}>{name}</p>
     </div>
   )
 }
@@ -45,7 +45,7 @@ export function Reviews() {
       <div className="site-container">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">Reviews</p>
+            <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#d7cc32" }}>Reviews</p>
             <h2 className="heading-font mt-2 text-3xl text-foreground sm:text-5xl">
               Loved By Our Visitors
             </h2>

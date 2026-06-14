@@ -15,7 +15,7 @@ export function CTA() {
           className="relative overflow-hidden rounded-3xl border border-primary/40 bg-card px-6 py-16 text-center md:py-20"
         >
           <div className="relative">
-            <h2 className="heading-font text-3xl text-foreground sm:text-5xl md:text-6xl">
+            <h2 className="heading-font text-3xl text-foreground sm:text-5xl md:text-5xl" style={{ fontWeight: 600 }}>
               Ready For An <span style={{ color: "#d7cc32" }}>Amazing Experience?</span>
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-muted-foreground">
@@ -26,7 +26,8 @@ export function CTA() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 sm:w-auto"
+                className="w-full rounded-full px-8 py-3.5 text-sm font-semibold transition-all hover:scale-105 sm:w-auto"
+                style={{ backgroundColor: "#d7cc32", color: "#000000" }}
               >
                 Book Your Visit
               </a>
@@ -34,7 +35,8 @@ export function CTA() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-full border border-primary px-8 py-3.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:w-auto"
+                className="w-full rounded-full border px-8 py-3.5 text-sm font-semibold transition-all sm:w-auto"
+                style={{ borderColor: "#d7cc32", color: "#d7cc32" }}
               >
                 Contact Us
               </a>

@@ -28,7 +28,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, value])
 
   return (
-    <span ref={ref} className="heading-font text-5xl text-primary sm:text-6xl">
+    <span ref={ref} className="heading-font text-5xl sm:text-6xl" style={{ color: "#000000" }}>
       {display}
       {suffix}
     </span>
@@ -37,7 +37,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export function Counters() {
   return (
-    <section className="border-y border-border bg-card py-16">
+    <section className="border-y border-border py-16" style={{ backgroundColor: "#d7cc32" }}>
       <div className="site-container grid gap-10 text-center sm:grid-cols-3">
         {stats.map((s, i) => (
           <motion.div
@@ -48,7 +48,7 @@ export function Counters() {
             transition={{ duration: 0.5, delay: i * 0.12 }}
           >
             <Counter value={s.value} suffix={s.suffix} />
-            <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+            <p className="mt-2 text-sm font-medium uppercase tracking-wider" style={{ color: "#000000" }}>
               {s.label}
             </p>
           </motion.div>

@@ -54,7 +54,7 @@ export function ServiceSection({
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="heading-font text-3xl text-primary sm:text-4xl md:text-5xl">{title}</h2>
+            <h2 className="heading-font text-3xl sm:text-4xl md:text-5xl" style={{ color: "#d7cc32" }}>{title}</h2>
             <p className="mt-5 text-pretty text-base leading-relaxed text-muted-foreground">
               {description}
             </p>
@@ -62,8 +62,8 @@ export function ServiceSection({
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {features.map((f) => (
                   <li key={f} className="flex items-center gap-2.5 text-sm text-foreground/90">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary">
-                      <Check className="h-3 w-3 text-primary-foreground" />
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: "#d7cc32" }}>
+                      <Check className="h-3 w-3 text-black" />
                     </span>
                     {f}
                   </li>

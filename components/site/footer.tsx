@@ -13,7 +13,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-sidebar">
+    <footer className="border-t border-border" style={{ backgroundColor: "#000000" }}>
       <div className="site-container grid gap-10 py-14 md:grid-cols-4">
         <div>
           <Logo />
@@ -24,7 +24,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="heading-font text-lg text-primary">Quick Links</h3>
+          <h3 className="heading-font text-lg" style={{ color: "#d7cc32" }}>Quick Links</h3>
           <ul className="mt-4 space-y-2.5">
             {quickLinks.map((l) => (
               <li key={l.href}>
@@ -37,22 +37,22 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="heading-font text-lg text-primary">Contact</h3>
+          <h3 className="heading-font text-lg" style={{ color: "#d7cc32" }}>Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-center gap-2.5">
-              <Phone className="h-4 w-4 text-primary" /> +1 (555) 012-3456
+              <Phone className="h-4 w-4" style={{ color: "#d7cc32" }} /> +(237)6531226550
             </li>
             <li className="flex items-center gap-2.5">
-              <Mail className="h-4 w-4 text-primary" /> hello@starcity.com
+              <Mail className="h-4 w-4" style={{ color: "#d7cc32" }} /> hello@starcity.com
             </li>
             <li className="flex items-center gap-2.5">
-              <MapPin className="h-4 w-4 text-primary" /> 123 Fun Avenue, Star City
+              <MapPin className="h-4 w-4" style={{ color: "#d7cc32" }} /> Bonamoussadi, Douala
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="heading-font text-lg text-primary">Follow Us</h3>
+          <h3 className="heading-font text-lg" style={{ color: "#d7cc32" }}>Follow Us</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             {socials.map((s) => (
               <a

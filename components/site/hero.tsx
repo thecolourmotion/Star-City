@@ -18,7 +18,7 @@ export function Hero() {
   const y = useTransform(scrollY, [0, 600], [0, 120])
 
   useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % slides.length), 4500)
+    const t = setInterval(() => setIndex((i) => (i + 1) % slides.length), 2250)
     return () => clearInterval(t)
   }, [])
 

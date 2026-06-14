@@ -8,7 +8,7 @@ export function Logo({ className = "" }: { className?: string }) {
       width={150}
       height={104}
       priority
-      className={`h-12 w-auto rounded-md object-contain ${className}`}
+      className={`h-16 w-auto object-contain ${className}`}
     />
   )
 }

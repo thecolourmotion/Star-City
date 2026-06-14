@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Star, StarHalf } from "lucide-react"
+import { Star, StarHalf, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react"
 import { Reveal } from "./reveal"
 
 const STAR_COLOR = "#d7cc32"
@@ -39,7 +40,17 @@ function ReviewCard({ name, text, rating }: { name: string; text: string; rating
 }
 
 export function Reviews() {
+  const [mobileIndex, setMobileIndex] = useState(0)
   const loop = [...reviews, ...reviews]
+
+  const handlePrev = () => {
+    setMobileIndex((i) => (i - 1 + reviews.length) % reviews.length)
+  }
+
+  const handleNext = () => {
+    setMobileIndex((i) => (i + 1) % reviews.length)
+  }
+
   return (
     <section id="reviews" className="overflow-hidden py-16 md:py-24">
       <div className="site-container">
@@ -60,7 +71,8 @@ export function Reviews() {
         </Reveal>
       </div>
 
-      <div className="relative mt-12">
+      {/* Desktop: Continuous scroll */}
+      <div className="relative mt-12 hidden md:block">
         <motion.div
           className="flex gap-5"
           animate={{ x: ["0%", "-50%"] }}
@@ -70,6 +82,36 @@ export function Reviews() {
             <ReviewCard key={i} {...r} />
           ))}
         </motion.div>
+      </div>
+
+      {/* Mobile: Button navigation */}
+      <div className="relative mt-12 flex md:hidden items-center justify-center gap-4">
+        <button
+          onClick={handlePrev}
+          className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
+          aria-label="Previous review"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <div className="w-full overflow-hidden">
+          <motion.div
+            className="flex gap-5"
+            initial={false}
+            animate={{ x: -mobileIndex * 320 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            {reviews.map((r, i) => (
+              <ReviewCard key={i} {...r} />
+            ))}
+          </motion.div>
+        </div>
+        <button
+          onClick={handleNext}
+          className="rounded-full border border-border bg-card p-2 transition-all hover:bg-primary/10"
+          aria-label="Next review"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
       </div>
     </section>
   )

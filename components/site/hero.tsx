@@ -70,7 +70,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="relative mx-auto mt-12 aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-3xl border border-border"
+          className="relative mt-12 -mx-4 aspect-[16/9] w-screen md:mx-auto md:w-full md:max-w-5xl overflow-hidden rounded-3xl border border-border md:rounded-3xl"
         >
           <AnimatePresence mode="wait">
             <motion.div
